@@ -1,4 +1,6 @@
-This is a spring boot based demo project for searching IMDb top 1000 movies.
+This is a spring boot based demo project for searching IMDb top 1000 movies. 
+It used jsoup to parse the IMDb site and stores data using Hibernate with a built in H2 database.
+
 You can build it using the maven wrapper mvnw, 
 mvnw -U clean install
 
