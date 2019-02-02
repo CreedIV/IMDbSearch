@@ -1,0 +1,27 @@
+This is a spring boot based demo project for searching IMDb top 1000 movies.
+You can build it using the maven wrapper mvnw, 
+mvnw -U clean install
+
+then run the jar file which will be a command like
+java -jar .\target\IMDbSearch-0.0.1-SNAPSHOT.jar
+
+
+
+The most important assumption that this project makes is those on how to read data from the
+IMDb site. It parses the sites raw HTML and relies on particular class names. 
+For reading Director, writer, and cast details it relies on these three items being
+the first 3 tables of the IMDb /fullcredits page. There didnt seem to be a consistent 
+way to identify this information otherwise. I also treat store directors, writers, and cast
+in the same table of the database and only make the distinguish them by their listed contribution
+in the movie 
+
+If I spent more time improving this. I would improve the information that I provide in search results.
+I would include elements like ratings, director/writer/ and cast lists. I would like to indicate if the movie
+can be found free online from popular sites or if its available in amazon prime or hulu. I would let the user 
+perform more complicated searches that could union or intersect movies with keywords. They would be able to filter
+by attributes like ranking, availability and date. I would separate the database out of the program 
+and put the site parsing code in an AWS lambda function which would spawn many functions to 
+read data for each movie. This would shorten its runtime and not impact the server when updating
+data. I could also log link clicks coming form search results and use that to determine movie relevance to
+keyword search.  
+
