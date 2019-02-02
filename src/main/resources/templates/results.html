@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Movie Results</title>
+  </head>
+  
+  <body>
+      <form action="/home">
+	    <input type="submit" value="Return to Search" />
+	  </form>
+
+      <ul>
+	  <li th:each="movie : ${movies}">
+        <span th:text="${movie.name}">NAME</span>
+        <a th:href="${movie.iMDblink}">LINK</a>
+        <br/>
+      </li>
+      </ul>
+
+  </body>
+</html>

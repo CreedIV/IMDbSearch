@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>IMDb Search</title>
+  </head>
+  
+  <body>
+  
+  
+    <form method="POST" th:action="@{/search}" th:object="${query}" id="searchForm">
+      <h1>What do you want to find?!</h1>
+	  <h3>Enter keywords seperated by spaces</h3>
+	  <br/>
+     
+      <label for="titleWords">Movie Title Keywords: </label>
+      <input type="text" th:field="*{titleWords}"/>
+      <br/>
+      
+      <label for="contributorWords">Contributor (Director/Writer/Cast) Keywords: </label>
+      <input type="text" th:field="*{contributorWords}"/>
+      <br/>
+
+      <input type="submit" value="Search"/>
+    </form>
+  
+  </body>
+</html>
